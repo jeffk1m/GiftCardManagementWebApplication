@@ -5,10 +5,14 @@ const express = require("express");
 const path = require("path");
 //For environment variables
 const dotenv = require("dotenv");
+//for mongoDB database connection
+const mongoose = require("mongoose");
 //Idk what morgan is for
 const morgan = require("morgan");
 //For session based interactivity
 const session = require("express-session");
+//For User sessions
+const MongoStore = require("connect-mongo")(session);
 //for authentication
 const passport = require("passport");
 //For basic front end
@@ -43,6 +47,7 @@ app.use(
     secret: "keyboard cat",
     reseave: false,
     saveUninitialized: false,
+    store: new MongoStore({ mongooseConnection: mongoose.connection }),
   })
 );
 
