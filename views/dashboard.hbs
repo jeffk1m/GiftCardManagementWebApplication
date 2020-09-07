@@ -1,1 +1,27 @@
-<h1>Dashboard Page</h1>
+<h6>Dashboard Page</h6>
+<h3> Welcome {{name}}</h3>
+<p> Here are your stories </p>
+<!-- stories is now just giftcards-->
+{{#if giftcards}}
+<table class="striped">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Title</th>
+            <th>Title</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each giftcards}}
+        <tr>
+            <td><a href="/giftcards/{{_id}}"></a></td>
+            <td>{{createdAt}}</td>
+            <td></td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>
+{{else}}
+<p>You have not created any gift cards</p>
+{{/if}}

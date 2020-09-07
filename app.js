@@ -11,10 +11,10 @@ const mongoose = require("mongoose");
 const morgan = require("morgan");
 //For session based interactivity
 const session = require("express-session");
-//For User sessions
-const MongoStore = require("connect-mongo")(session);
 //for authentication
 const passport = require("passport");
+//For User sessions
+const MongoStore = require("connect-mongo")(session);
 //For basic front end
 const exphbs = require("express-handlebars");
 //To connect to the Mongo Database
