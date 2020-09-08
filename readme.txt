@@ -37,4 +37,29 @@ Routes:
 
 9/7/2020 
     -Stopped at input form
-        
+    -Stopped at the input styling section 1:38:18 file is views/giftcard/index.hbs
+
+
+
+
+Things to Implement:
+    -Editing method, adding/subtracting values from giftcard
+    -giftID Lookup input, lookup the exact giftcard and edit values
+            -Further Steps:
+                Use mongoose find by iD option
+                also need to create an additional hamburger bar option to search up the gift card code 
+                once you type in the code you could just jump over or something
+            -Possible Resource:
+                https://masteringjs.io/tutorials/mongoose/find-by-id#:~:text=In%20Mongoose%2C%20the%20Model.,if%20no%20document%20was%20found.
+    -generateRandomCode, generate a random giftcard code, and 
+        look through the database to make sure the id is unique
+        or just use a middleware to give it a unique id
+            -Possible resource: 
+                https://kb.objectrocket.com/mongo-db/unique-check-in-mongodb-687
+                https://masteringjs.io/tutorials/mongoose/unique
+                So mongoose has it's own unique key word, it'll return an error
+                if the giftCardID is not unique. lol you could just keep on 
+                entering random values until a unique value comes up
+    -delete giftcard once it's been all used up once a value
+        goes to zero, you would either have the option to delete or
+        refund the gift card code.
