@@ -1,0 +1,24 @@
+<h3> Edit Gift Card </h3>
+<div class="row">
+    <form action="/giftcards/{{gift._id}}" method="POST" class="col s12">
+        <input type="hidden" name="_method" value="PUT">
+        <div class="row">
+            <div class="input-field">
+                <input type="number" id="giftID" name="giftID" value="{{gift.giftID}}">
+                <label for="giftID">GIFT ID: </label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field">
+                <input type="number" id="value" name="value" value="{{gift.value}}">
+                <label for="value">VALUE: </label>
+            </div>
+
+            <div class="row">
+                <input type="submit" value="Save" class="btn">
+                <a href="/dashboard" class="btn orange">Cancle</a>
+            </div>
+
+        </div>
+    </form>
+</div>

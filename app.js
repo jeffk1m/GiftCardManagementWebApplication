@@ -13,6 +13,8 @@ const morgan = require("morgan");
 const session = require("express-session");
 //for authentication
 const passport = require("passport");
+//Method Override
+const methodOverride = require("method-override");
 //For User sessions
 const MongoStore = require("connect-mongo")(session);
 //For basic front end
@@ -36,18 +38,33 @@ const app = express();
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
+//METHOD OVERRIDE
+app.use(
+  methodOverride(function (req, res) {
+    if (req.body && typeof req.body === "object" && "_method" in req.body) {
+      let method = req.body._method;
+      delete req.body._method;
+      return method;
+    }
+  })
+);
+
 //Logging
 if (process.env.NODE_ENV === "development") {
   app.use(morgan("dev"));
 }
 
 // Handlebars Helpers
-const { formatDate } = require("./helpers/hbs");
+const { formatDate, editIcon } = require("./helpers/hbs");
 
 //Setting up express handlebars
 app.engine(
   ".hbs",
-  exphbs({ helpers: { formatDate }, defaultLayout: "main", extname: ".hbs" })
+  exphbs({
+    helpers: { formatDate, editIcon },
+    defaultLayout: "main",
+    extname: ".hbs",
+  })
 );
 app.set("view engine", ".hbs");
 
@@ -64,6 +81,12 @@ app.use(
 //Setting up passport middleware
 app.use(passport.initialize());
 app.use(passport.session());
+
+//set global variable
+app.use(function (req, res, next) {
+  res.locals.user = req.user || null;
+  next();
+});
 
 //Set up for static folders
 app.use(express.static(path.join(__dirname, "public")));

@@ -1,0 +1,17 @@
+About Application (short):
+    Empowering businesses by providing a free web application tool to create and manage
+    giftcards.
+
+About Application (long):
+    Giftcards provide an incentive for customers to come in once again and also incentivize
+    new customers to come in.
+    Many small businesses don't have access to giftcard management software unlike larger 
+    corporations which can afford to develop or buy such software on their own.
+    This free Gift Card Management Application hopes to level that playing
+    field and provide small businesses with easy to use and free gift card management software.
+    The software can generate codes, attach values to codes, edit the values and lookup codes.
+    There are more features to come!
+
+Featues List:
+    -Create Unique GiftCard codes
+    -

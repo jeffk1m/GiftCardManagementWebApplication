@@ -31,7 +31,7 @@ Routes:
             -Functionality includes, subtract amount, add amount
             -Once a code reaches zero delete it from the database
         -If it's not a valid code you get an error message
-    -Online Code Table: "/codes/"
+    -Online Code Table: "/dashboard/"
         -Displays all of the codes currently active
         -Also displays some extra information
 
