@@ -7,7 +7,7 @@ const mongoose = require("mongoose");
 
 const GiftSchema = new mongoose.Schema({
   giftID: {
-    type: String,
+    type: Number,
     required: true,
   },
   value: {

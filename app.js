@@ -32,13 +32,23 @@ connectDB();
 //Setting up Express Application
 const app = express();
 
+//BODY PARSER
+app.use(express.urlencoded({ extended: false }));
+app.use(express.json());
+
 //Logging
 if (process.env.NODE_ENV === "development") {
   app.use(morgan("dev"));
 }
 
+// Handlebars Helpers
+const { formatDate } = require("./helpers/hbs");
+
 //Setting up express handlebars
-app.engine(".hbs", exphbs({ defaultLayout: "main", extname: ".hbs" }));
+app.engine(
+  ".hbs",
+  exphbs({ helpers: { formatDate }, defaultLayout: "main", extname: ".hbs" })
+);
 app.set("view engine", ".hbs");
 
 //Setting up express-sessions middleware
@@ -58,9 +68,12 @@ app.use(passport.session());
 //Set up for static folders
 app.use(express.static(path.join(__dirname, "public")));
 
+//ROUTES
 //Any requests from "/" will be using the routes from "/routes/index.js"
 app.use("/", require("./routes/index"));
 app.use("/auth", require("./routes/auth"));
+app.use("/giftcards", require("./routes/gift"));
+
 //Establishes PORT
 const PORT = process.env.PORT || 3000;
 

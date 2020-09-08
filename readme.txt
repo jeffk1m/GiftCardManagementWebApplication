@@ -14,6 +14,8 @@ Setting up Routes:
 
 Setting up Basic Frontend:
 
+Interesting Article on the Economics Behind GiftCards:
+    -https://thehustle.co/what-happens-to-unused-gift-cards/
 
 Routes:
     -Login Page: "/"
