@@ -63,3 +63,16 @@ Things to Implement:
     -delete giftcard once it's been all used up once a value
         goes to zero, you would either have the option to delete or
         refund the gift card code.
+
+-Okay so Mongo is wierd when it comes to floating point numbers
+    -So i'm thinking that one possible solution is to just treat all dollars as 
+    -an integer then afterwards append the decimal point sign 2 places afterwards
+    -I would need to test if there are any edge cases as well
+    -so 9.00 would just be 900
+    -10.00 would just be 1000
+    -1.00 would just be 100
+    -I would also need to have the input edit on the fly potentially.
+    -user enters $14.50
+        -I remove it to just store 1450
+    -User enters $100
+        -I edit it so that it is just 100.00

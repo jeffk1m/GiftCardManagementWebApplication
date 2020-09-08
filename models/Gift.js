@@ -4,6 +4,7 @@ const mongoose = require("mongoose");
 //Unique Identifier probably some randomly generated string
 //Value
 //Created At Date
+var SchemaTypes = mongoose.Schema.Types;
 
 const GiftSchema = new mongoose.Schema({
   giftID: {
