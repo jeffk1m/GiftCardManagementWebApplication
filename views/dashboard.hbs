@@ -15,9 +15,21 @@
     <tbody>
         {{#each giftcards}}
         <tr>
-            <td><a href="/giftcards/{{giftID}}"></a>{{giftID}}</td>
+            <td><a href="/giftcards/{{_id}}">{{giftID}}</a></td>
             <td><a href="/giftcards/{{giftID}}"></a>${{value}}</td>
             <td>{{formatDate createdAt 'MMMM Do YYYY'}}</td>
+            <td>
+                <a href="/giftcards/edit/{{_id}}" class="btn btn-float">
+                    <i class="fas fa-edit"></i>
+                </a>
+                <form action="/giftcards/{{_id}}" method="POST" id="delete-form">
+                    <input type="hidden" name="_method" value="Delete">
+                    <button type="submit" class="btn red">
+                        <i class="fas fa-trash"></i>
+                    </button>
+                </form>
+
+            </td>
         </tr>
         {{/each}}
     </tbody>

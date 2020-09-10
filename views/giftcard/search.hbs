@@ -1,0 +1,14 @@
+<h3> Search Bar </h3>
+<div class="row">
+    <form action="/giftcards" method="GET" class="col s12">
+        <div class="row">
+            <div class="input-field">
+                <input type="number" id="giftID" name="giftID">
+                <label for="giftID">GIFT ID: </label>
+                <a class="waves-effect waves-light btn" onclick="javascript:var GIFTID = document.getElementById('giftID').value;
+                    alert(GIFTID);
+                    window.location.replace('http://localhost:3000/giftcards/search/' + GIFTID);">Search</a>
+            </div>
+        </div>
+    </form>
+</div>
