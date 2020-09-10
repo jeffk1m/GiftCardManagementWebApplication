@@ -4,18 +4,20 @@
         <div class="row">
             <div class="input-field">
                 <input type="number" id="giftID" name="giftID">
-                <label for="giftID">GIFT ID: </label>
+                <label for="giftID">GIFT CARD CODE: Enter a 16 digit code </label>
             </div>
+            <a class="waves-effect waves-light btn" onclick="var rand16 = (Math.floor(1000000000000000 + Math.random() * 9999999999999999));
+                document.getElementById('giftID').value = rand16;">Generate a Random 16 Digit Code</a>
         </div>
         <div class="row">
             <div class="input-field">
                 <label for="value">VALUE: </label>
-                <br> <br>
+                <br> <br>$
                 <input type="decimal" id="value" name="value">
             </div>
             <div class="row">
                 <input type="submit" value="Save" class="btn">
-                <a href="/dashboard" class="btn orange">Cancle</a>
+                <a href="/dashboard" class="btn orange">Cancel</a>
             </div>
 
         </div>

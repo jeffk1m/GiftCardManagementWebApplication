@@ -5,21 +5,19 @@
         <div class="row">
             <div class="input-field">
                 <input type="number" id="giftID" name="giftID" value="{{gift.giftID}}">
-                <label for="giftID">GIFT ID: </label>
+                <label for="giftID">GIFT CARD CODE: </label>
             </div>
         </div>
         <div class="row">
             <div class="input-field">
                 <label for="value">VALUE: </label>
                 <br> <br>
-                <input type="decimal" id="value" name="value" value="{{gift.value}}">
+                $ <input type="decimal" id="value" name="value" value="{{gift.value}}">
             </div>
-
             <div class="row">
                 <input type="submit" value="Save" class="btn">
-                <a href="/dashboard" class="btn orange">Cancle</a>
+                <a href="/dashboard" class="btn orange">Cancel</a>
             </div>
-
         </div>
     </form>
 </div>

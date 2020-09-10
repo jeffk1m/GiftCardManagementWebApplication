@@ -10,6 +10,7 @@ const GiftSchema = new mongoose.Schema({
   giftID: {
     type: Number,
     required: true,
+    unique: true,
   },
   value: {
     type: Number,
