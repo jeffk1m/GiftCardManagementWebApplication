@@ -1,17 +1,3 @@
-Dependencies:
-    -Express.js
-    -Mongoose.js
-
-Set Up Project:
-    -Install all packages required
-    -Set up .gitignore
-    -Include all applications required
-    -Plan the routes
-
-Setting up Routes:
-    -login page route
-    -dashboard route
-
 Setting up Basic Frontend:
 
 Interesting Article on the Economics Behind GiftCards:
@@ -39,12 +25,9 @@ Routes:
     -Stopped at input form
     -Stopped at the input styling section 1:38:18 file is views/giftcard/index.hbs
 
-
-
-
 Things to Implement:
-    -Editing method, adding/subtracting values from giftcard
-    -giftID Lookup input, lookup the exact giftcard and edit values
+    -Editing method, adding/subtracting values from giftcard [x]
+    -giftID Lookup input, lookup the exact giftcard and edit values [x]
             -Further Steps:
                 Use mongoose find by iD option
                 also need to create an additional hamburger bar option to search up the gift card code 
@@ -60,9 +43,11 @@ Things to Implement:
                 So mongoose has it's own unique key word, it'll return an error
                 if the giftCardID is not unique. lol you could just keep on 
                 entering random values until a unique value comes up
+    -delete giftcard [x]
     -delete giftcard once it's been all used up once a value
         goes to zero, you would either have the option to delete or
         refund the gift card code.
+    -Generate QR code for the giftcard?
 
 -Okay so Mongo is wierd when it comes to floating point numbers
     -So i'm thinking that one possible solution is to just treat all dollars as 

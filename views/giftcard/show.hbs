@@ -1,24 +1,22 @@
 <div class="row">
     <div class="col s12 m8">
-        <h3>
-            {{gift.title}}
-            <small>{{{editIcon gift.user user gift._id false}}}</small>
-        </h3>
         <div class="card story">
             <div class="card-content">
+                <h3>
+                    Gift Card Code: {{gift.giftID}}
+                </h3>
                 <span class="card-title"> {{formatDate date 'MMMM Do YYYY'}}</span>
-                {{{gift.body}}}
-            </div>
-        </div>
-    </div>
-    <div class="col s12 m4">
-        <div class="card center-align">
-            <div class="card-content">
-                <span class="card-title">{{gift.user.displayName}}</span>
-                <img src="{{gift.user.image}}" class="circle responsive-img img-small">
-            </div>
-            <div>
-                <a href="/stories/user{{gift.user._id}}">More From {{gift.user.user._id}}</a>
+                {{{gift.value}}}
+                <br><br>
+                <a href="/giftcards/edit/{{gift._id}}" class="btn btn-float">
+                    <i class="fas fa-edit"></i>
+                </a>
+                <form action="/giftcards/{{gift._id}}" method="POST" id="delete-form">
+                    <input type="hidden" name="_method" value="Delete">
+                    <button type="submit" class="btn red">
+                        <i class="fas fa-trash"></i>
+                    </button>
+                </form>
             </div>
         </div>
     </div>

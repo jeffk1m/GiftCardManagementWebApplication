@@ -96,7 +96,7 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use("/", require("./routes/index"));
 app.use("/auth", require("./routes/auth"));
 app.use("/giftcards", require("./routes/gift"));
-
+app.use("/about", require("./routes/about.js"));
 //Establishes PORT
 const PORT = process.env.PORT || 3000;
 

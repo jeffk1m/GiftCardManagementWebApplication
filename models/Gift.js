@@ -23,6 +23,10 @@ const GiftSchema = new mongoose.Schema({
     type: Date,
     default: Date.now,
   },
+  activated: {
+    //To see if the card has been activated or not
+    type: Boolean,
+  },
 });
 
 module.exports = mongoose.model("Gift", GiftSchema);
