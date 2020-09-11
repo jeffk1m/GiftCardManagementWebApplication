@@ -17,6 +17,8 @@ const passport = require("passport");
 const methodOverride = require("method-override");
 //For User sessions
 const MongoStore = require("connect-mongo")(session);
+//For printing HTML elements
+const PHE = require("print-html-element");
 //For basic front end
 const exphbs = require("express-handlebars");
 //To connect to the Mongo Database
@@ -55,13 +57,13 @@ if (process.env.NODE_ENV === "development") {
 }
 
 // Handlebars Helpers
-const { formatDate, editIcon } = require("./helpers/hbs");
+const { formatDate, editIcon, select } = require("./helpers/hbs");
 
 //Setting up express handlebars
 app.engine(
   ".hbs",
   exphbs({
-    helpers: { formatDate, editIcon },
+    helpers: { formatDate, editIcon, select },
     defaultLayout: "main",
     extname: ".hbs",
   })
@@ -97,6 +99,7 @@ app.use("/", require("./routes/index"));
 app.use("/auth", require("./routes/auth"));
 app.use("/giftcards", require("./routes/gift"));
 app.use("/about", require("./routes/about.js"));
+app.use("/tutorial", require("./routes/tutorial"));
 //Establishes PORT
 const PORT = process.env.PORT || 3000;
 

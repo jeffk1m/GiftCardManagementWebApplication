@@ -14,6 +14,16 @@
                 <br> <br>
                 $ <input type="decimal" id="value" name="value" value="{{gift.value}}">
             </div>
+            <br>
+            <div class="row">
+                <select id="status" name="status">
+                    {{#select gift.status}}
+                    <option value="deactivated" selected>DEACTIVATED</option>
+                    <option value="activated">ACTIVATED</option>
+                    {{/select}}
+                </select>
+                <label for="status">Status</label>
+            </div>
             <div class="row">
                 <input type="submit" value="Save" class="btn">
                 <a href="/dashboard" class="btn orange">Cancel</a>
